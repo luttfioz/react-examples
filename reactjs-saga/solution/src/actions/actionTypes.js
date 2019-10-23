@@ -1,0 +1,5 @@
+export const LOAD_PRODUCTS = 'app/products/LOAD_PRODUCTS'
+export const LOAD_PRODUCTS_SUCCESS = 'app/products/LOAD_PRODUCTS_SUCCESS'
+export const LOAD_PRODUCTS_ERROR = 'app/products/LOAD_PRODUCTS_ERROR'
+export const ADD_PRODUCT = 'app/products/ADD_PRODUCT'
+export const DELETE_PRODUCT = 'app/products/DELETE_PRODUCT'

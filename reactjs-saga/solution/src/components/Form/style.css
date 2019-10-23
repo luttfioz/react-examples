@@ -1,0 +1,26 @@
+label {
+    font-weight: 600
+}
+
+.fab {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    background-color: transparent;
+    right: 0;
+}
+
+.fab i {
+    font-size: 48px;
+    color: #111111;
+}
+
+.form-container {
+    background-color: #DDDDDD;
+    padding: 10px;
+    text-align: center;
+}
+
+.form-container * {
+    margin: 10px;
+}
