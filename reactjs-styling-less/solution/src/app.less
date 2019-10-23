@@ -1,0 +1,59 @@
+@import './theme/colors.less';
+@import './theme/dimens';
+
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: @primary-dark;
+}
+
+table {
+    .bordered();
+}
+
+tr {
+    background-color: @white;
+    th:nth-child(1){
+        // Show first column for large devices
+        @media (min-width: 768px) {
+            display: block;
+        }
+        /* Hide first column for large devices */
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+th {
+    font-family: 'Open Sans', sans-serif;
+    color: @primary-dark;
+    padding: @default-padding;
+    img {
+        .bordered();
+    }
+}
+
+tbody {
+    th {
+        font-weight: 300;
+    }
+    tr:nth-child(odd){
+        background-color: @light-gray;
+    }
+}
+
+.App {
+    padding: @default-padding * 2;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bordered {
+    border: 1px solid @primary-light;
+    border-radius: 2px;
+    border-spacing: 0;
+}
