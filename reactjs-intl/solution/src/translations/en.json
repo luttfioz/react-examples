@@ -1,0 +1,16 @@
+{
+    "myApp.App.Home": "HOME",
+    "myApp.App.About": "ABOUT",
+    "myApp.App.Contact": "CONTACT",
+    "myApp.containers.Home.header": "Products",
+    "myApp.components.Table.TableHeader.image": "Image",
+    "myApp.components.Table.TableHeader.name": "Name",
+    "myApp.components.Table.TableHeader.price": "Price",
+    "myApp.components.Table.TableHeader.description": "Description",
+    "myApp.components.Form.addNewProduct": "Please add a new product below:",
+    "myApp.components.Form.image": "Image",
+    "myApp.components.Form.name": "Name",
+    "myApp.components.Form.price": "Price",
+    "myApp.components.Form.description": "Description",
+    "myApp.components.Form.add": "ADD"
+}
