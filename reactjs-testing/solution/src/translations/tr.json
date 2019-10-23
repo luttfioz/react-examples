@@ -1,0 +1,17 @@
+{
+    "myApp.App.Home": "ANA SAYFA",
+    "myApp.App.About": "HAKKINDA",
+    "myApp.App.Contact": "İLETİŞİM",
+    "myApp.containers.Home.header": "Ürünler",
+    "myApp.containers.Home.error": "Sistem hatası",
+    "myApp.components.Table.TableHeader.image": "Resim",
+    "myApp.components.Table.TableHeader.name": "İsim",
+    "myApp.components.Table.TableHeader.price": "Fiyat",
+    "myApp.components.Table.TableHeader.description": "Açıklama",
+    "myApp.components.Form.addNewProduct": "Lütfen yeni ürünü ekleyiniz",
+    "myApp.components.Form.image": "Resim",
+    "myApp.components.Form.name": "İsim",
+    "myApp.components.Form.price": "Fiyat",
+    "myApp.components.Form.description": "Açıklama",
+    "myApp.components.Form.add": "EKLE"
+}

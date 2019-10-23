@@ -1,0 +1,14 @@
+button {
+  outline: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-lang {
+  top: 0;
+  right: 0;
+  position: absolute;
+  background: transparent;
+  font-weight: 100;
+  padding: 10px;
+}
