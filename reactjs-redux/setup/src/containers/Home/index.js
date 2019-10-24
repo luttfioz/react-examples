@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { loadProducts } from '../../actions/products';
+import { loadProducts, deleteProduct, addProduct } from '../../actions/products';
 import Heading from '../../components/Heading'
 import Table from '../../components/Table'
 import Form from '../../components/Form'
@@ -22,11 +22,13 @@ export class Home extends React.Component {
 
 	onDelete(index) {
 		// Implement onDelete with redux
-
+		this.props.deleteProductFromProps(index)
 	}
 
 	onAdd(product) {
 		// Implement onAdd with redux
+		this.props.addProductFromProps(product)
+
 	}
 	render() {
 		return (
@@ -53,6 +55,12 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		loadProducts: (productList) => {
 			dispatch(loadProducts(productList))
+		},
+		deleteProductFromProps: (index) => {
+			dispatch(deleteProduct(index))
+		},
+		addProductFromProps: (product) => {
+			dispatch(addProduct(product))
 		}
 	}
 }
