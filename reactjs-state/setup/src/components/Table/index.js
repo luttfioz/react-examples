@@ -9,7 +9,7 @@ export default class Table extends React.Component {
         return (
             <table>
                 <TableHeader />
-                <TableBody list={data} onDeleteItem={ (index) => { this.props.onDelete(index) }} />
+                <TableBody list={data} onDeleteItem={ this.props.onDelete } />
             </table>
         );
     }

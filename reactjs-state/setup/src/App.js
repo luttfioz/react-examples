@@ -12,6 +12,7 @@ class App extends Component {
       counter: 0,
       productList: data.productList
     }
+    this.deleteProduct = this.deleteProduct.bind(this);
   }
 
   handleClick = () => {
@@ -34,7 +35,7 @@ class App extends Component {
         {/* method called via arrow functions */}
         <button onClick={this.handleClick}> {this.state.counter} </button>
         <Heading title="Products" />
-        <Table data={this.state.productList} onDelete={(index) => { this.deleteProduct(index) }} />
+        <Table data={this.state.productList} onDelete={this.deleteProduct} />
       </div>
     );
   }
