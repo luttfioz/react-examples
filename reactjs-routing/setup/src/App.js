@@ -1,42 +1,40 @@
 import React, { Component } from 'react';
-import Heading from './components/Heading'
-import Table from './components/Table'
-import Form from './components/Form'
-import * as data from './data.json';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import Home from './containers/Home';
+import About from './containers/About';
+import Contact from './containers/Contact';
+import NotFound from './containers/NotFound';
 import './App.css';
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			productList: data.productList
-		}
-		this.onDelete = this.onDelete.bind(this);
-		this.onAdd = this.onAdd.bind(this);
-	}
-
-	onDelete(index) {
-		const { productList } = this.state;
-		this.setState({ productList: productList.filter((product, i)=> {
-			return i !== index;
-		}) });
-	}
-
-	onAdd(product) {
-		let productList = this.state.productList;
-		productList.push(product);
-		this.setState({ productList });
-	}
-
 	render() {
 		return (
 			<div className="App">
-				<Heading title="Products" />
-				<Table data={this.state.productList} onDelete={this.onDelete} />
-				<Form onSubmit={this.onAdd}/>
+				<BrowserRouter>
+					<div className="menu">
+						<ul>
+							<li>
+								<Link to="/">HOME</Link>
+							</li>
+							<li>
+								<Link to="/about">ABOUT</Link>
+							</li>
+							<li>
+								<Link to="/contact">CONTACT</Link>
+							</li>
+						</ul>
+					</div>
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route exact path="/about" component={About} />
+						<Route exact path="/contact" component={Contact} />
+						<Route path="*" component={NotFound} />
+					</Switch>
+				</BrowserRouter>
 			</div>
 		);
 	}
+
 }
 
 export default App;
