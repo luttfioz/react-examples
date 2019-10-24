@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom'
 import './App.css';
 import Home from './containers/Home';
 import About from './containers/About';
@@ -10,6 +10,7 @@ class App extends React.Component {
 
 	render() {
 		return <BrowserRouter>
+			<Redirect from="/asd" to="/about"></Redirect>
 			<div className="menu">
 				<ul>
 					<li>
