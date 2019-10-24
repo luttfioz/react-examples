@@ -9,20 +9,32 @@ class App extends Component {
 
     super(props);
     this.state = {
-      counter: 0
+      counter: 0,
+      productList: data.productList
     }
   }
-  handleClick() {
+
+  handleClick = () => {
     const { counter } = this.state;
     this.setState({ counter: counter + 1 });
+  };
+
+  deleteProduct(deletedIndex) {
+    const { productList } = this.state;
+    this.setState({
+      productList: productList.filter((item, index) => {
+        return index !== deletedIndex;
+      })
+    })
   }
+
   render() {
     return (
       <div className="App">
         {/* method called via arrow functions */}
-        <button onClick={() => { this.handleClick(); }}> {this.state.counter} </button>
+        <button onClick={this.handleClick}> {this.state.counter} </button>
         <Heading title="Products" />
-        <Table data={data.productList} />
+        <Table data={this.state.productList} onDelete={(index) => { this.deleteProduct(index) }} />
       </div>
     );
   }

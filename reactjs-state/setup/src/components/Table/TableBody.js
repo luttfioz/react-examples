@@ -13,6 +13,9 @@ export default class TableBody extends React.Component {
                         <td>{item.name}</td>
                         <td>{item.price}</td>
                         <td>{item.description}</td>
+                        <td><button className="btn-icon" onClick={() => {this.props.onDeleteItem(index)}}>
+                            <i className="material-icons">delete</i>
+                        </button> </td>
                     </tr>);
                 })}
             </tbody>);
