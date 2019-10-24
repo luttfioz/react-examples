@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Heading from './components/Heading'
 import Table from './components/Table'
+import * as data from './data.json';
 import './App.css';
 
 class App extends Component {
@@ -8,7 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <Heading title="Products" />
-        <Table />
+        <Table data={data.productList}/>
       </div>
     );
   }
