@@ -7,6 +7,7 @@ class About extends React.Component {
 	render() {
 		return <div>
 			<Heading title="About" />
+			<p>You have {this.props.products.productList.length} in total</p>
 		</div>;
 	}
 }
