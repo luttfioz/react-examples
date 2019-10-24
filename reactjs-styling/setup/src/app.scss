@@ -1,0 +1,63 @@
+@import './theme/colors.scss';
+@import './theme/dimens.scss';
+
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: $default-weight * 2;
+    color: $primary-dark;
+}
+
+
+@mixin bordered {
+    border: 1px solid $primary-light;
+    border-radius: 2px;
+    border-spacing: 0
+}
+
+table {
+    @include bordered;
+}
+
+th {
+    font-family: 'Open Sans', sans-serif;
+    color: $primary-dark;
+    padding: $default-padding;
+
+    img {
+        @include bordered;
+    }
+}
+
+tbody {
+    th {
+        font-weight: $default-weight;
+    }
+
+    tr:nth-child(odd) {
+        background-color: $light-gray;
+    }
+}
+
+tr {
+    background-color: $white;
+    th:nth-child(1){
+        // Show first column for large devices
+        @media (min-width: 768px) {
+            display: block
+        }
+        /* Hide first columd for small devices */
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+.App {
+    padding: $default-padding * 2;
+}
+
+
+.text-center {
+    text-align: center;
+}
