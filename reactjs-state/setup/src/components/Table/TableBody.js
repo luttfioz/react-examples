@@ -4,7 +4,7 @@ import images from '../../images/index';
 
 export default class TableBody extends React.Component {
     render() {
-        const { list } = this.props;
+        const { list, onDeleteItem } = this.props;
         return (
             <tbody>
                 {list.map((item, index) => {
@@ -13,7 +13,7 @@ export default class TableBody extends React.Component {
                         <td>{item.name}</td>
                         <td>{item.price}</td>
                         <td>{item.description}</td>
-                        <td><button className="btn-icon" onClick={() => {this.props.onDeleteItem(index)}}>
+                        <td><button className="btn-icon" onClick={() => {onDeleteItem(index)}}>
                             <i className="material-icons">delete</i>
                         </button> </td>
                     </tr>);

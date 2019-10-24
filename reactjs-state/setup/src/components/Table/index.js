@@ -5,11 +5,11 @@ import './style.css'
 
 export default class Table extends React.Component {
     render() {
-        const { data } = this.props;
+        const { data, onDelete } = this.props;
         return (
             <table>
                 <TableHeader />
-                <TableBody list={data} onDeleteItem={ this.props.onDelete } />
+                <TableBody list={data} onDeleteItem={ onDelete } />
             </table>
         );
     }
