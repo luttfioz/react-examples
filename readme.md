@@ -11,3 +11,4 @@ webpack-demos
 reactjs-quickstart  
     > create-react-app setup  
     
+React Developer Tools Chrome Extension yüklenebilir.
