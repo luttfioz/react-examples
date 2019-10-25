@@ -4,7 +4,7 @@ import { createSelector } from 'reselect'
 import Heading from '../../components/Heading'
 
 class About extends React.Component {
-	render() {
+	render() {             
 		return <div>
 			<Heading title="About" />
 			<p>You have {this.props.products.productList.length} in total</p>

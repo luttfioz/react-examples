@@ -3,7 +3,9 @@ import { fromJS } from 'immutable';
 import {
     LOAD_PRODUCTS,
     ADD_PRODUCT,
-    DELETE_PRODUCT
+    DELETE_PRODUCT,
+    LOAD_PRODUCTS_ERROR,
+    LOAD_PRODUCTS_SUCCESS
 } from '../actions/actionTypes'
 
 const initialState = fromJS({
@@ -26,6 +28,16 @@ function productReducer(state = initialState, action) {
                 productList: state.get('productList').filter((item, index) => {
                     return index !== action.index
                 })
+            });
+        case LOAD_PRODUCTS_SUCCESS:
+            return state.merge({
+                loading: false,
+                productList: action.productList
+            });
+        case LOAD_PRODUCTS_ERROR:
+            return state.merge({
+                loading: false,
+                error: action.error
             });
         default:
             return state;
