@@ -24,11 +24,32 @@ addLocaleData([...locale_en, ...locale_tr]);
 
 const messages = { en, tr }
 
+
+class IntlProviderWrapper extends React.Component {
+    state = {
+      locale: 'en'
+    }
+  
+    changeLanguage = ()=> {
+      this.setState({locale: this.state.locale === 'en' ? 'tr' : 'en'})
+    }
+    render() {
+      const { locale } = this.state;
+      return (
+        <IntlProvider locale={locale} messages={messages[locale]}>
+          <div>
+            {this.props.children}
+            <button className="btn-lang" onClick={this.changeLanguage}>{this.state.locale === 'en' ? 'TR' : 'EN'}</button>
+          </div>
+        </IntlProvider>);
+    }
+  }
+
 ReactDOM.render(
 	<Provider store={store}>
-			<IntlProvider locale={'tr'} messages={messages['tr']}>
+		<IntlProviderWrapper>
 			<App />
-		</IntlProvider>
+		</IntlProviderWrapper>
 	</Provider>,
 	document.getElementById('root')
 )
