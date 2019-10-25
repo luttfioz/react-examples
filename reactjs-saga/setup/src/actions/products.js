@@ -1,5 +1,7 @@
 import {
     LOAD_PRODUCTS,
+    LOAD_PRODUCTS_SUCCESS,
+    LOAD_PRODUCTS_ERROR,
     ADD_PRODUCT,
     DELETE_PRODUCT
 } from './actionTypes'
@@ -7,6 +9,20 @@ import {
 export function loadProducts() {
     return {
         type: LOAD_PRODUCTS
+    }
+}
+
+export function loadProductsSuccess(productList) {
+    return {
+        type: LOAD_PRODUCTS_SUCCESS,
+        productList
+    }
+}
+
+export function loadProductsError(error) {
+    return {
+        type: LOAD_PRODUCTS_ERROR,
+        error
     }
 }
 
