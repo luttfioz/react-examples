@@ -29,6 +29,12 @@ export class Home extends React.Component {
 		this.props.addProduct(product);
 	}
 	render() {
+		const { loading, error, productList	} = this.props.products;
+		if (loading) {
+			return <h1>LOADING_PRODUCTS, PLEASE WAIT ..</h1>
+		} else if (error) {
+			return <Error message = {error} />
+		}
 		return (
 			<div className="home-container">
 				<Heading title="Products" />
